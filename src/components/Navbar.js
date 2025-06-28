@@ -1,0 +1,162 @@
+import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-scroll';
+import AOS from 'aos'
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import './CSS/Navbar.css'
+import { BiWorld } from "react-icons/bi";
+import { IoIosContact } from "react-icons/io";
+import { FaReact, FaHtml5, FaCss3, FaJs, FaBootstrap, FaNode, FaGitAlt, FaGithub, FaAws, FaLinkedin } from "react-icons/fa";
+import { SiExpress, SiMongodb, SiPostman } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import Card from 'react-bootstrap/Card'
+import 'aos/dist/aos.css'
+
+const NavbarElement = () => {
+    AOS.init({});
+    const slide = useRef(null)
+    useEffect(() => {
+        function handleScroll() {
+            const scrollY = window.scrollY
+            if (scrollY.toFixed(0) > 30) {
+                slide.current.style.position = 'fixed';
+                slide.current.style.top = '0'
+                slide.current.style.backgroundColor = 'black'
+            } else {
+                slide.current.style.position = 'relative'
+                slide.current.style.backgroundColor = 'transparent'
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+    }, [])
+
+    return (
+        <>
+            <div id='main' style={{ height: '100vh' }}>
+                <div className='hero-container'>
+                    <Navbar expand="lg" className="col-12 d-flex justify-content-center" id='navBar' style={{ zIndex: '1000' }} ref={slide}>
+                        <div className='d-flex justify-content-between col-10'>
+                            <div>
+                                <Navbar.Brand>Vishal</Navbar.Brand>
+                            </div>
+                            <div>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                                <Navbar.Collapse id="basic-navbar-nav">
+                                    <Nav className="me-auto">
+                                        <Nav.Link as={Link} role='button' to="home" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Home</Nav.Link>
+                                        <Nav.Link as={Link} role='button' to="about" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>About</Nav.Link>
+                                        <Nav.Link as={Link} role='button' to="skills" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Skills</Nav.Link>
+                                        <Nav.Link as={Link} role='button' to="link" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Project</Nav.Link>
+                                        <Nav.Link as={Link} role='button' to="contact" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Contact</Nav.Link>
+                                    </Nav>
+                                </Navbar.Collapse>
+                            </div>
+                        </div>
+                    </Navbar>
+                    <div id='home' className='col-12 d-flex align-items-center justify-content-center' style={{ height: '90%' }}>
+                        <div className='color-blobs'></div>
+                        <div className='col-12 col-md-8 col-lg-7 p-3 d-flex flex-column align-items-center'>
+                            <p className='col-12 ubuntu-medium mt-5' id='hero-content'>What I love, I build and I build the web</p>
+                            <div className='d-flex gap-2'>
+                                <button className='btn d-flex align-items-center gap-1 cta'><BiWorld />Discover</button>
+                                <button className='btn d-flex align-items-center gap-1 cta'><IoIosContact />Contact me</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id='about' className='col-12 d-flex flex-column gap-5' style={{ padding: "150px 50px", backgroundColor: '#1c1f26' }}>
+                    <div className='col-11 col-lg-7' data-aos="fade-up">
+                        <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Hi There I'm Vishal,</p>
+                        <p style={{ fontSize: '20px', color: '#8B949E' }}>A passionate web developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js) with a focus on building fast, responsive, and user-friendly websites. I love transforming ideas into scalable digital solutions using clean code, modern design, and SEO best practices</p>
+                    </div>
+                    <div className='col-11 col-lg-5' data-aos="fade-up">
+                        <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Recent Experience</p>
+                        <p className='ubuntu-medium' style={{ fontSize: '20px', color: '#8B949E' }}>2025 Jan - present</p>
+                        <p style={{ fontSize: '20px', color: '#8B949E' }}>Intern @ Kitkat Web Technologies</p>
+                    </div>
+                </div>
+                <div className='col-12 d-flex flex-column align-items-center gap-5' id='skills' style={{ backgroundColor: '#20232a', padding: '150px 50px' }}>
+                    <div data-aos="fade-up">
+                        <p className='ubuntu-medium' style={{ fontSize: '50px', color: '#E6EDF3' }}>🛠️ Skills</p>
+                    </div>
+                    <div id='cardContainer' className='col-11 d-flex flex-wrap flex-lg-nowrap gap-3' data-aos="fade-up">
+                        <Card style={{ width: '20rem', height: '300px' }} data-aos="zoom-in-right" data-aos-delay='200' className='card'>
+                            <Card.Body className='d-flex flex-column justify-content-evenly'>
+                                <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Front-End</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2"><FaHtml5 className="text-warning" />
+                                    <FaCss3 className="text-primary" />
+                                    <FaJs style={{ color: '#f0db4f' }} />
+                                    <FaReact style={{ color: '#61DBFB' }} />
+                                    <FaBootstrap style={{ color: '#7952B3' }} />
+                                </Card.Subtitle>
+                                <Card.Text style={{ color: '#8B949E' }}>
+                                    Building responsive, accessible, and fast UIs using modern frontend frameworks and clean design principles.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card style={{ width: '20rem', height: '300px' }} data-aos="zoom-in-up" data-aos-delay='300' className='card'>
+                            <Card.Body className='d-flex flex-column justify-content-evenly'>
+                                <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Back-End</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2">
+                                    <FaNode style={{ color: '#68A063' }} />
+                                    <SiExpress style={{ color: '#fff' }} />
+                                </Card.Subtitle>
+                                <Card.Text style={{ color: '#8B949E' }}>
+                                    Developing secure backend services and APIs to power dynamic, full-stack applications efficiently.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card style={{ width: '20rem', height: '300px' }} data-aos="zoom-in-up" data-aos-delay='300' className='card'>
+                            <Card.Body className='d-flex flex-column justify-content-evenly'>
+                                <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Database</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2"> <SiMongodb style={{ color: '#4DB33D' }} /></Card.Subtitle>
+                                <Card.Text style={{ color: '#8B949E' }}>
+                                    Designing efficient and scalable data models using NoSQL technologies like MongoDB for modern web apps.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card style={{ width: '20rem', height: '300px' }} data-aos="zoom-in-left" data-aos-delay='200' className='card'>
+                            <Card.Body className='d-flex flex-column justify-content-evenly'>
+                                <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Tools</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2">
+                                    <FaGitAlt style={{ color: '#F1502F' }} />
+                                    <FaGithub style={{ color: '#fff' }} />
+                                    <SiPostman style={{ color: '#FF6C37' }} />
+                                    <VscVscode style={{ color: '#007ACC' }} />
+                                    <FaAws style={{ color: '#FF9900' }} />
+                                </Card.Subtitle>
+                                <Card.Text style={{ color: '#8B949E' }}>
+                                    Managing code, testing APIs, deploying apps and streamlining development using Git, Postman, VS Code, and AWS.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <div id='contact' className='col-12 d-flex flex-column align-items-center gap-3' style={{ backgroundColor: '#161B22', padding: '150px 50px' }}>
+                    <p className='ubuntu-medium' style={{ fontSize: '50px', color: '#E6EDF3' }} data-aos="fade-right">Contact</p>
+                    <div className='col-11 col-md-8 col-lg-5 text-center' data-aos="fade-right">
+                        <p style={{ color: '#8B949E' }}>For any type of online project please don't hesitate to get in touch with me. The fastest way is to send me your message using the following email <a style={{textDecoration: "none"}} href="mailto:vishalashok2003@gmail.com">vishalashok2003@gmail.com</a></p>
+                    </div>
+                    <div className='col-11 col-md-8 col-lg-5' data-aos="fade-right">
+                        <form className='d-flex flex-column gap-3'>
+                            <input type="text" placeholder='Name' />
+                            <input type="text" placeholder='Email' />
+                            <textarea cols="30" rows="5" placeholder='Project details'></textarea>
+                            <button className='btn btn-primary'>Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div id='footer' className='d-flex flex-column align-items-center p-3 p-lg-5 gap-3' style={{ backgroundColor: '#2c2f36' }}>
+                    <div className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Stay Connected!</div>
+                    <div className='d-flex gap-3'><FaLinkedin fontSize='30px' className='text-primary' /><FaGithub fontSize='30px' color='#fff' /></div>
+                    <div style={{ color: '#8B949E' }}>Vishal ©2025 All rights reserved</div>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default NavbarElement;

@@ -57,7 +57,7 @@
     }
 }
 
-#home #hero-content{
+#home #hero-content {
     font-size: 70px;
     width: 100%;
 }
@@ -68,14 +68,14 @@
     margin-bottom: 1.5rem;
 }
 
-.nav-Link.active{
+.nav-Link.active {
     color: gray;
 }
 
 #skills .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
-  cursor: pointer;
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    cursor: pointer;
 }
 
 #main .navbar {
@@ -157,16 +157,24 @@
 }
 
 
-#contact input, #contact textarea{
+#contact input,
+#contact textarea {
     background-color: #0D1117;
     border: none;
     color: white;
 }
 
+.main-cont-pad {
+    padding: 150px 50px;
+}
 
 @media only screen and (max-width: 425px) {
-    #home #hero-content{
+    #home #hero-content {
         font-size: 50px;
         color: white;
+    }
+
+    .main-cont-pad {
+        padding: 100px 15px;
     }
 }

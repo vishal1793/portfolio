@@ -164,7 +164,7 @@ const NavbarElement = () => {
                     <div id='cardContainer' className='col-12' data-aos="fade-up">
                         <Card style={{ width: '100%', height: 'fit-content', padding: '20px' }} data-aos="zoom-in-right" data-aos-delay='200' className='card'>
                             <Card.Body className='d-flex flex-wrap gap-5 justify-content-evenly col-12'>
-                                <div className='col-12 col-lg-5'>
+                                <div className='col-12 col-lg-5 d-flex flex-column gap-3'>
                                     <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }} data-aos="fade-right">Multi-Dashboard Template for Admin & User Panel</Card.Title>
                                     <Card.Text style={{ color: '#8B949E' }} data-aos="fade-right">
                                         Building responsive, accessible, and fast UIs using modern frontend frameworks and clean design principles.
@@ -177,6 +177,7 @@ const NavbarElement = () => {
                                         <li>📁 Data-driven design using mock API integration</li>
                                         <li>🌙 Fully responsive & dark-themed interface</li>
                                     </ul>
+                                    <a href="https://github.com/vishal1793/myapp" target='blank' className='btn btn-primary' data-aos="fade-right">Git Hub code</a>
                                 </div>
                                 <div className='col-12 col-lg-6' data-aos="fade-left">
                                     <img src={images[index]} alt="img" style={{ width: '100%', height: '100%', borderRadius: '10px' }} />

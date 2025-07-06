@@ -16,7 +16,7 @@ import loginimg from '../components/Images/LoginPage.png'
 import userdataimg from '../components/Images/UserLogin.png'
 import userviewimg from '../components/Images/UserView.png'
 import courseimg from '../components/Images/CourseOverview.png'
-
+import profileimg from '../components/Images/Portfolio_image.png'
 const NavbarElement = () => {
     AOS.init({});
     const slide = useRef(null)
@@ -71,7 +71,7 @@ const NavbarElement = () => {
                                         <Nav.Link as={Link} role='button' to="home" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Home</Nav.Link>
                                         <Nav.Link as={Link} role='button' to="about" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>About</Nav.Link>
                                         <Nav.Link as={Link} role='button' to="skills" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Skills</Nav.Link>
-                                        <Nav.Link as={Link} role='button' to="link" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Project</Nav.Link>
+                                        <Nav.Link as={Link} role='button' to="project" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Project</Nav.Link>
                                         <Nav.Link as={Link} role='button' to="contact" spy={true} smooth={true} offset={-70} duration={200} activeClass='active'>Contact</Nav.Link>
                                     </Nav>
                                 </Navbar.Collapse>
@@ -89,69 +89,103 @@ const NavbarElement = () => {
                         </div>
                     </div>
                 </div>
-                <div id='about' className='col-12 d-flex flex-column gap-5 main-cont-pad' style={{ backgroundColor: '#1c1f26' }}>
-                    <div className='col-11 col-lg-7' data-aos="fade-up">
-                        <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Hi There I'm Vishal,</p>
-                        <p style={{ fontSize: '20px', color: '#8B949E' }}>A passionate web developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js) with a focus on building fast, responsive, and user-friendly websites. I love transforming ideas into scalable digital solutions using clean code, modern design, and SEO best practices</p>
+                <div id='about' className='col-12 d-flex flex-wrap flex-md-nowrap justify-content-between align-items-center main-cont-pad gap-5' style={{ backgroundColor: '#1c1f26' }}>
+                    <div className='col-12 col-md-8 d-flex flex-column gap-4'>
+                        <div className='col-11 col-lg-8' data-aos="fade-up">
+                            <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Hi There I'm Vishal,</p>
+                            <p style={{ fontSize: '20px', color: '#8B949E' }}>A passionate web developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js) with a focus on building fast, responsive, and user-friendly websites. I love transforming ideas into scalable digital solutions using clean code, modern design, and SEO best practices</p>
+                        </div>
+                        <div className='col-11 col-lg-5' data-aos="fade-up">
+                            <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Recent Experience</p>
+                            <p className='ubuntu-medium' style={{ fontSize: '20px', color: '#8B949E' }}>2025 Jan - present</p>
+                            <p style={{ fontSize: '20px', color: '#8B949E' }}>Intern @ Kitkat Web Technologies</p>
+                        </div>
                     </div>
-                    <div className='col-11 col-lg-5' data-aos="fade-up">
-                        <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Recent Experience</p>
-                        <p className='ubuntu-medium' style={{ fontSize: '20px', color: '#8B949E' }}>2025 Jan - present</p>
-                        <p style={{ fontSize: '20px', color: '#8B949E' }}>Intern @ Kitkat Web Technologies</p>
+                    <div className='col-12 col-md-4 d-flex justify-content-center' data-aos="zoom-in">
+                        <img src={profileimg} alt="image" id='about-img'/>
                     </div>
                 </div>
                 <div className='col-12 d-flex flex-column align-items-center gap-5 main-cont-pad' id='skills' style={{ backgroundColor: '#20232a' }}>
                     <div data-aos="fade-up">
                         <p className='ubuntu-medium' style={{ fontSize: '50px', color: '#E6EDF3' }}>🛠️ Skills</p>
                     </div>
-                    <div id='cardContainer' className='col-11 d-flex flex-wrap flex-lg-nowrap gap-3' data-aos="fade-up">
-                        <Card style={{ width: '20rem', height: '300px' }} data-aos="zoom-in-right" data-aos-delay='200' className='card'>
+                    <div id='cardContainer' className='col-11 d-flex flex-wrap justify-content-center' data-aos="fade-up" style={{ gap: '80px' }}>
+                        <Card data-aos="zoom-in-right" data-aos-delay='300' className='card col-12 col-lg-5 card-height'>
                             <Card.Body className='d-flex flex-column justify-content-evenly'>
-                                <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Front-End</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2"><FaHtml5 className="text-warning" />
-                                    <FaCss3 className="text-primary" />
-                                    <FaJs style={{ color: '#f0db4f' }} />
-                                    <FaReact style={{ color: '#61DBFB' }} />
-                                    <FaBootstrap style={{ color: '#7952B3' }} />
-                                </Card.Subtitle>
-                                <Card.Text style={{ color: '#8B949E' }}>
+                                <div className='col-12 d-flex justify-content-between gap-3'>
+                                    <Card.Title className='col-6 ubuntu-medium fs-2' style={{ color: "#E6EDF3" }}>Front-End</Card.Title>
+                                    <Card.Subtitle className="col-6 mb-2 d-flex flex-wrap gap-2 fs-2">
+                                        <FaHtml5 className="text-warning" />
+                                        <FaCss3 className="text-primary" />
+                                        <FaJs style={{ color: '#f0db4f' }} />
+                                        <FaReact style={{ color: '#61DBFB' }} />
+                                        <FaBootstrap style={{ color: '#7952B3' }} />
+                                    </Card.Subtitle>
+                                </div>
+                                <Card.Text style={{ color: '#8B949E', fontSize: '17px' }}>
                                     Building responsive, accessible, and fast UIs using modern frontend frameworks and clean design principles.
                                 </Card.Text>
+                                <Card.Text style={{ color: "#E6EDF3", fontSize: '18px' }}>
+                                    <strong>Languages:</strong> HTML5, CSS3, JavaScript (ES6+)<br />
+                                    <strong>Frameworks:</strong> React.js, Bootstrap<br />
+                                    <strong>Animation & UX:</strong> AOS, Responsive Layouts
+                                </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '20rem', height: '300px' }} data-aos="zoom-in-up" data-aos-delay='300' className='card'>
+                        <Card data-aos="zoom-in-left" data-aos-delay='300' className='card col-12 col-lg-5 card-height'>
                             <Card.Body className='d-flex flex-column justify-content-evenly'>
-                                <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Back-End</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2">
-                                    <FaNode style={{ color: '#68A063' }} />
-                                    <SiExpress style={{ color: '#fff' }} />
-                                </Card.Subtitle>
-                                <Card.Text style={{ color: '#8B949E' }}>
+                                <div className='col-12 d-flex justify-content-between'>
+                                    <Card.Title className='ubuntu-medium fs-2' style={{ color: "#E6EDF3" }}>Back-End</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted d-flex gap-3 fs-2">
+                                        <FaNode style={{ color: '#68A063' }} />
+                                        <SiExpress style={{ color: '#fff' }} />
+                                    </Card.Subtitle>
+                                </div>
+                                <Card.Text style={{ color: '#8B949E', fontSize: '17px' }}>
                                     Developing secure backend services and APIs to power dynamic, full-stack applications efficiently.
                                 </Card.Text>
-                            </Card.Body>
-                        </Card>
-                        <Card style={{ width: '20rem', height: '300px' }} data-aos="zoom-in-up" data-aos-delay='300' className='card'>
-                            <Card.Body className='d-flex flex-column justify-content-evenly'>
-                                <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Database</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2"> <SiMongodb style={{ color: '#4DB33D' }} /></Card.Subtitle>
-                                <Card.Text style={{ color: '#8B949E' }}>
-                                    Designing efficient and scalable data models using NoSQL technologies like MongoDB for modern web apps.
+                                <Card.Text style={{ color: "#E6EDF3", fontSize: '18px' }}>
+                                    <strong>Runtime:</strong> Node.js<br />
+                                    <strong>Framework:</strong> Express.js<br />
+                                    <strong>Role:</strong> API development, middleware integration, routing
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '20rem', height: '300px' }} data-aos="zoom-in-left" data-aos-delay='200' className='card'>
+                        <Card data-aos="zoom-in-right" data-aos-delay='300' className='card col-12 col-lg-5 card-height'>
                             <Card.Body className='d-flex flex-column justify-content-evenly'>
-                                <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Tools</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2">
-                                    <FaGitAlt style={{ color: '#F1502F' }} />
-                                    <FaGithub style={{ color: '#fff' }} />
-                                    <SiPostman style={{ color: '#FF6C37' }} />
-                                    <VscVscode style={{ color: '#007ACC' }} />
-                                    <FaAws style={{ color: '#FF9900' }} />
-                                </Card.Subtitle>
-                                <Card.Text style={{ color: '#8B949E' }}>
+                                <div className='col-12 d-flex justify-content-between'>
+                                    <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Database</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2"> <SiMongodb style={{ color: '#4DB33D' }} /></Card.Subtitle>
+                                </div>
+                                <Card.Text style={{ color: '#8B949E', fontSize: '17px' }}>
+                                    Designing efficient and scalable data models using NoSQL technologies like MongoDB for modern web apps.
+                                </Card.Text>
+                                <Card.Text style={{ color: '#E6EDF3', fontSize: '18px' }}>
+                                    <strong>Database:</strong> MongoDB (NoSQL)<br />
+                                    <strong>Skills:</strong> Schema design, document modeling, querying
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <Card data-aos="zoom-in-left" data-aos-delay='300' className='card col-12 col-lg-5 card-height'>
+                            <Card.Body className='d-flex flex-column justify-content-evenly'>
+                                <div className='col-12 d-flex justify-content-between'>
+                                    <Card.Title className='ubuntu-medium fs-3' style={{ color: "#E6EDF3" }}>Tools</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted d-flex gap-2 fs-2">
+                                        <FaGitAlt style={{ color: '#F1502F' }} />
+                                        <FaGithub style={{ color: '#fff' }} />
+                                        <SiPostman style={{ color: '#FF6C37' }} />
+                                        <VscVscode style={{ color: '#007ACC' }} />
+                                        <FaAws style={{ color: '#FF9900' }} />
+                                    </Card.Subtitle>
+                                </div>
+                                <Card.Text style={{ color: '#8B949E', fontSize: '17px' }}>
                                     Managing code, testing APIs, deploying apps and streamlining development using Git, Postman, VS Code, and AWS.
+                                </Card.Text>
+                                <Card.Text style={{ color: '#E6EDF3', fontSize: '18px' }}>
+                                    <strong>Version Control:</strong> Git, GitHub<br />
+                                    <strong>Testing & API:</strong> Postman<br />
+                                    <strong>Development:</strong> VS Code<br />
+                                    <strong>Deployment:</strong> AWS basics
                                 </Card.Text>
                             </Card.Body>
                         </Card>

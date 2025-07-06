@@ -57,6 +57,31 @@
     }
 }
 
+@keyframes float_img {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#about #about-img {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(97, 219, 251, 0.2);
+    animation: float_img 4s ease-in-out infinite;
+                                
+}
+
+
 #home #hero-content {
     font-size: 70px;
     width: 100%;
@@ -165,10 +190,14 @@
 }
 
 .main-cont-pad {
-    padding: 150px 50px;
+    padding: 110px 50px;
 }
 
-@media only screen and (max-width: 425px) {
+#skills #cardContainer .card-height {
+    height: 300px;
+}
+
+@media only screen and (max-width: 500px) {
     #home #hero-content {
         font-size: 50px;
         color: white;
@@ -176,5 +205,9 @@
 
     .main-cont-pad {
         padding: 100px 15px;
+    }
+
+    #skills #cardContainer .card-height {
+        height: fit-content;
     }
 }

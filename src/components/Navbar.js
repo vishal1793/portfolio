@@ -95,14 +95,22 @@ const NavbarElement = () => {
                             <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Hi There I'm Vishal,</p>
                             <p style={{ fontSize: '20px', color: '#8B949E' }}>A passionate web developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js) with a focus on building fast, responsive, and user-friendly websites. I love transforming ideas into scalable digital solutions using clean code, modern design, and SEO best practices</p>
                         </div>
+                        <div className='col-11 col-lg-8' data-aos="fade-up">
+                            <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Education</p>
+                            <ul style={{ listStyle: 'none', paddingLeft: 0, color: '#8B949E', fontSize: '18px' }}>
+                                <li>🎓 <strong>2024</strong> – B.E. Mechanical, Thiagarajar College of Engineering, Madurai</li>
+                                <li>🛠️ <strong>2021</strong> – Diploma in Mechanical Engineering, Seshasayee Institute of Technology, Trichy</li>
+                                <li>🏫 <strong>2018</strong> – SSLC, Cheran Higher Secondary School, Karur</li>
+                            </ul>
+                        </div>
                         <div className='col-11 col-lg-5' data-aos="fade-up">
                             <p className='ubuntu-medium' style={{ fontSize: '30px', color: '#E6EDF3' }}>Recent Experience</p>
                             <p className='ubuntu-medium' style={{ fontSize: '20px', color: '#8B949E' }}>2025 Jan - present</p>
-                            <p style={{ fontSize: '20px', color: '#8B949E' }}>Intern @ Kitkat Web Technologies</p>
+                            <p style={{ fontSize: '20px', color: '#E6EDF3' }}>Intern @ Kitkat Web Technologies</p>
                         </div>
                     </div>
                     <div className='col-12 col-md-4 d-flex justify-content-center' data-aos="zoom-in">
-                        <img src={profileimg} alt="image" id='about-img'/>
+                        <img src={profileimg} alt="image" id='about-img' />
                     </div>
                 </div>
                 <div className='col-12 d-flex flex-column align-items-center gap-5 main-cont-pad' id='skills' style={{ backgroundColor: '#20232a' }}>
